@@ -17,7 +17,8 @@ exports.before = {
     auth.verifyToken(),
     auth.populateUser(),
     auth.restrictToAuthenticated(),
-    auth.restrictToOwner({ ownerField: 'id' })
+    // Sequelize-demo: Removing restrictToOwner to allow users to fetch other's posts.
+    // auth.restrictToOwner({ ownerField: 'id' })
   ],
   create: [auth.hashPassword(), gravatar()],
   update: [

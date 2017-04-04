@@ -28,8 +28,6 @@ Getting up and running is as easy as 1, 2, 3.
 __0.1.0__
 
 - Initial release. 
-This demo app is not completely functional yet, it has one remaining bug: services/message/hooks/index.js uses hooks.populate as an after hook in the find method. But this
-throws an uncaught error that traces to feathers-authentication/lib/hooks/restrict-to-owner when there are messages from different users in the database. Basically, somewhere in there there is a hook that is not allowing us to retrieve messages posted by other users.
 
 If you want to see how the code changes from the original feathers chat demo app that uses NeDB, look for occurrences of "Sequelize-demo" as comments. 
 

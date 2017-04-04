@@ -22,6 +22,7 @@ module.exports = function(options) {
     hook.data = {
       text,
       // Set the user id
+      // Sequelize-demo: Use 'id' instead of '_id'.
       userId: user.id,
     };
   };

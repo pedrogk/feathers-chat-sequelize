@@ -29,7 +29,6 @@ exports.before = {
 
 exports.after = {
   all: [],
-  // Sequelize-demo: Calling populateSender on find throws an error that traces to feathers-authentication/lib/hooks/restrict-to-owner. This only happens when you have messages by different users. No idea how to fix this.
   find: [populateSender],
   get: [populateSender],
   create: [populateSender],
