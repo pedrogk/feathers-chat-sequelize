@@ -17,12 +17,18 @@ module.exports = function(sequelize) {
     password: {
       type: Sequelize.STRING,
       allowNull: false
+    },
+    // Sequelize-demo: Add avatar field definition to schema.
+    avatar: {
+      type: Sequelize.STRING,
+      allowNull: true
     }
   }, {
     freezeTableName: true
   });
 
-  user.sync();
+  // Sequelize-demo: Note that sync() was removed because we do it in services/index.js in order to define associations before sync.
 
   return user;
+
 };

@@ -14,10 +14,17 @@ module.exports = function(sequelize) {
       allowNull: false
     }
   }, {
-    freezeTableName: true
+    freezeTableName: true,
+    // Sequelize-demo: Define association to user so that it creates userId column as a foreign key.
+    classMethods: {
+      associate(models) {
+        // Sequelize-demo: Note that the model is 'users' not 'user' because that is how we defined it in sequelize.
+        message.belongsTo(models.users);
+      }
+    }
   });
 
-  message.sync();
+  // Sequelize-demo: Note that sync() was removed because we do it in services/index.js in order to define associations before sync.
 
   return message;
 };
